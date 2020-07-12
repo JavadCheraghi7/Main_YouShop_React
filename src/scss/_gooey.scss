@@ -1,0 +1,119 @@
+.gooey{
+    height: 91vh;
+    width: 100%;
+    position: absolute;
+    filter: url(#gooey);
+    overflow: hidden;
+
+    .circle1{
+        display: block;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        background: linear-gradient(to right bottom, $dark 1%, $green 85%);
+        box-shadow: 0 5px 30px $dark;
+        animation: circle1 20s ease-out infinite;
+    }
+
+    .circle2{
+        display: block;
+        position: absolute;
+        top: 240px;
+        right: 32%;
+        width: 290px;
+        height: 290px;
+        border-radius: 50%;
+        background: linear-gradient(to left top, $dark 1%, $green 85%);
+    }
+
+    @keyframes circle1{
+        0%, 100%{left: 0;}
+        50%{left: 64%;}
+    }
+}
+
+.svgGooey{
+    width: 0.1px;
+    height: 0px;
+}
+
+@media screen and (max-width: 1400px){
+    .gooey .circle1{
+        top: 100px;
+    }
+
+    .gooey .circle2{
+        top: 220px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .gooey .circle1{
+        width: 160px;
+        height: 160px;
+    }
+
+    .gooey .circle2{
+        width: 260px;
+        height: 260px;
+    }
+
+    @keyframes circle1{
+        0%, 100%{left: 0;}
+        50%{left: 62%;}
+    }
+}
+
+@media screen and (max-width: 992px){
+    .gooey .circle1{
+        width: 130px;
+        height: 130px;
+        top: 160px;
+    }
+    
+    .gooey .circle2{
+        width: 230px;
+        height: 230px;
+        right: 30%;
+        top: 260px;
+    }
+
+    @keyframes circle1{
+        0%, 100%{left: 0;}
+        50%{left: 62%;}
+    }
+}
+
+@media screen and (max-width: 768px){
+    .gooey .circle1{
+        width: 110px;
+        height: 110px;
+        top: 140px;
+    }
+    
+    .gooey .circle2{
+        width: 210px;
+        height: 210px;
+        right: 28%;
+        top: 240px;
+    }
+
+}
+@media screen and (max-width: 560px){
+    .gooey .circle1{
+        width: 110px;
+        height: 110px;
+        top: 140px;
+    }
+    
+    .gooey .circle2{
+        width: 210px;
+        height: 210px;
+        right: 19%;
+        top: 240px;
+    }
+
+}

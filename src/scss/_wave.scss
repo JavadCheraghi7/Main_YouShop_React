@@ -1,0 +1,319 @@
+.st0 {
+  opacity: 0.4;
+  fill: url(#grad);
+  stroke: #1a001a00;
+  stroke-width: 0;
+  color: #ffb8bd;
+}
+
+.w3 {
+  opacity: 0.6;
+}
+
+.w3 {
+  animation: anim3 25s 5s infinite forwards;
+}
+
+.w4 {
+  animation: anim4 25s infinite forwards;
+}
+
+.w0 {
+  animation: anim0 25s infinite forwards;
+}
+
+.w2 {
+  animation: anim2 25s 6s infinite forwards;
+}
+
+@keyframes anim3 {
+  0% {
+    d: path(
+      "M0,579.3c221.49-13.07,342.77-35.08,506.54-37.63,205.57-3.21,495.11,117.71,700,125.94,252.93,10.17,355-45.81,458.46-73.67V0H0Z"
+    );
+  }
+  50% {
+    d: path(
+      "M0,540.57c265.69,146.7,468.07,154.22,605.32,132.7C795.82,643.39,873.26,555.6,1076.05,513c236.73-49.77,446.62,3.56,589,57.81V0H0Z"
+    );
+  }
+  100% {
+    d: path(
+      "M0,579.3c221.49-13.07,342.77-35.08,506.54-37.63,205.57-3.21,495.11,117.71,700,125.94,252.93,10.17,355-45.81,458.46-73.67V0H0Z"
+    );
+  }
+}
+
+@keyframes anim4 {
+  0% {
+    d: path(
+      "M0,585.25c241.2,122.28,427.1,82.3,615.07,53.91,204.74-30.91,279.61-67.75,484.15-68.08,247.45-.4,425.44,41.41,565.78,94.29V0H0Z"
+    );
+  }
+  50% {
+    d: path(
+      "M0,582.86c273.5,111.6,357.76,88,484.59,73.12,186.23-21.83,389.34-65.19,576.82-83.44C1304.59,548.88,1524,544.9,1665,587.71V0H0Z"
+    );
+  }
+  100% {
+    d: path(
+      "M0,585.25c241.2,122.28,427.1,82.3,615.07,53.91,204.74-30.91,279.61-67.75,484.15-68.08,247.45-.4,425.44,41.41,565.78,94.29V0H0Z"
+    );
+  }
+}
+
+@keyframes anim0 {
+  0% {
+    d: path(
+      "M0,575.09c288.8,116.63,330.49,91.43,440.68,91.47,190,.05,710.74-112.69,911-96.69C1598,589.56,1528.48,585.1,1665,607.24V0H0Z"
+    );
+  }
+  50% {
+    d: path(
+      "M0,535.44C265.69,687,719.37,673.4,857.76,663c198.57-14.85,243.58-78.1,423.17-95,248-23.37,247.74,22.21,384.07,38V0H0Z"
+    );
+  }
+  100% {
+    d: path(
+      "M0,575.09c288.8,116.63,330.49,91.43,440.68,91.47,190,.05,710.74-112.69,911-96.69C1598,589.56,1528.48,585.1,1665,607.24V0H0Z"
+    );
+  }
+}
+
+@keyframes anim2 {
+  0% {
+    d: path(
+      "M0,535.44C265.69,687,719.37,673.4,857.76,663c198.57-14.85,243.58-78.1,423.17-95,248-23.37,247.74,22.21,384.07,38V0H0Z"
+    );
+  }
+  50% {
+    d: path(
+      "M0,575.09c288.8,116.63,330.49,91.43,440.68,91.47,190,.05,710.74-112.69,911-96.69C1598,589.56,1528.48,585.1,1665,607.24V0H0Z"
+    );
+  }
+  100% {
+    d: path(
+      "M0,535.44C265.69,687,719.37,673.4,857.76,663c198.57-14.85,243.58-78.1,423.17-95,248-23.37,247.74,22.21,384.07,38V0H0Z"
+    );
+  }
+}
+
+.wave {
+  position: relative;
+  width: 100%;
+  height: 91vh;
+  overflow: hidden;
+
+  .waveSlider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    // background: salmon;
+
+    .sliderPic {
+      position: relative;
+      flex: 1;
+
+      .img {
+        width: 380px;
+        height: 380px;
+        margin: 0 auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+
+          &.hiddenImg {
+            transform: translateX(-70px);
+            opacity: 0;
+            transition: 1s;
+          }
+
+          &.showImg {
+            transform: translateX(0px);
+            opacity: 1;
+            transition: 1s;
+          }
+        }
+      }
+    }
+
+    .productInfo {
+      flex: 1;
+      text-align: right;
+      direction: rtl;
+
+      ul {
+        list-style: none;
+        width: 550px;
+        margin: 0 200px 0 auto;
+        padding: 0;
+        color: $white;
+
+        &.hiddenInfo {
+          transform: translateX(70px);
+          opacity: 0;
+          transition: 1s;
+        }
+
+        &.showInfo {
+          transform: translateX(0px);
+          opacity: 1;
+          transition: 1s;
+        }
+
+        h3 {
+          margin-bottom: 30px;
+          font-size: 17px;
+          font-weight: 500;
+        }
+
+        li {
+          margin: 13px 0;
+          font-size: 14px;
+
+          .arrowLeft {
+            transform: translateY(4px);
+            margin-left: 5px;
+          }
+        }
+
+        .buyBtn {
+          display: inline-block;
+          text-decoration: none;
+          margin-top: 50px;
+          padding: 9px 35px;
+          color: $white;
+          background: $purple;
+          border: none;
+          border-radius: 25px;
+          @include shadow();
+          // opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+// Media queries
+
+@media screen and (max-width: 1400px) {
+  .svgWave {
+    height: 85vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .svgWave {
+    height: 84vh;
+  }
+
+  .wave .waveSlider .sliderPic .img {
+    width: 380px;
+    height: 380px;
+    margin: 0 auto 0 130px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .svgWave {
+    height: 84vh;
+  }
+
+  .wave .waveSlider .sliderPic .img {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto 80px 50px;
+  }
+
+  .wave .waveSlider .sliderPic{
+    width: 100%;
+    order: 2;
+  }
+
+  .wave .waveSlider{
+    flex-direction: column;
+  }
+
+  .wave .waveSlider .productInfo {
+    width: 100%;
+    ul {
+      margin-right: 105px;
+      margin-top: 140px;
+      li {
+        display: none;
+      }
+      h3 {
+        font-size: 15px;
+        margin-bottom: 0;
+      }
+      .buyBtn {
+        margin-top: 25px;
+        padding: 7px 35px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+
+  .wave .waveSlider .sliderPic .img {
+    width: 340px;
+    height: 340px;
+    margin: 0 auto 80px 50px;
+  }
+
+  .wave .waveSlider .productInfo {
+    ul {
+      margin-right: 60px;
+      margin-top: 140px;
+      li {
+        display: none;
+      }
+      h3 {
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+      .buyBtn {
+        margin-top: 25px;
+        padding: 6px 30px;
+        font-size: 13px;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 560px){
+
+  .wave .waveSlider .sliderPic .img {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 80px -20px;
+  }
+
+  .wave .waveSlider .productInfo {
+    ul {
+      margin-right: 20px;
+      margin-top: 100px;
+      li {
+        display: none;
+      }
+      h3 {
+        font-size: 12px;
+        margin-bottom: 0;
+      }
+      .buyBtn {
+        margin-top: 25px;
+        padding: 6px 30px;
+        font-size: 13px;
+      }
+    }
+  }
+
+}

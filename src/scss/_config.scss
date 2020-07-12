@@ -1,0 +1,28 @@
+$dark: #373737;
+$white: #eef2f3;
+$green: #00ff9b;
+$purple: #592bff;
+
+
+
+@mixin insideShadow() {
+  box-shadow: inset -1.3px -2px 4px rgba(255, 255, 255, 0.14),
+    inset 3px 3px 7px rgba(0, 0, 0, 0.4);
+}
+
+@mixin normalShadow() {
+  box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.14),
+  3px 3px 7px rgba(0, 0, 0, 0.4);
+}
+
+@mixin shadow(){
+  box-shadow: 0px 12px 12px -10px rgba(0, 0, 0, 0.3);
+  // 0px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+@mixin squareWave($x, $y){
+  width: $x;
+  height: $y;
+}
+
+

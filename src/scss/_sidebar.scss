@@ -1,0 +1,320 @@
+.sidebar {
+  // width: 350px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: $dark;
+  box-shadow: 6px 0 12px rgba(0, 0, 0, 0.1), 3px 0 6px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  overflow: hidden;
+
+  .side {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    .top-sidebar {
+      display: flex;
+      justify-content: space-between;
+
+      .sidebar-logo {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0 0 0;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        img {
+          width: 100%;
+          height: 48px;
+          object-fit: contain;
+        }
+
+        p {
+          margin: 0;
+          font-size: 13px;
+          font-weight: 600;
+          color: #ccc;
+          text-shadow: 1px 1px 2px black;
+        }
+      }
+
+      .sidebar-cart {
+        color: $white;
+        text-decoration: none;
+        align-self: center;
+        padding: 8px 20px;
+        margin: 10px 5px 0 0;
+        border-radius: 22px;
+        @include normalShadow();
+
+        &:hover {
+          @include insideShadow();
+        }
+
+        .shoppingSideBar {
+          font-size: 18px;
+          transform: translateY(3px);
+        }
+
+        .sidebar-buy {
+          display: inline-block;
+          width: 17px;
+          height: 17px;
+          font-size: 12px;
+          font-weight: 600;
+          text-align: center;
+          margin-left: 2px;
+          color: $dark;
+          border-radius: 50%;
+          background: $green;
+        }
+      }
+
+      .exit {
+        display: block;
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        line-height: 1.3;
+        border-radius: 50%;
+        font-size: 25px;
+        font-weight: 900;
+        text-align: center;
+        margin: 5px 5px 0 0;
+        box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2),
+          1.5px 1.5px 1.5px rgba(0, 0, 0, 0.3);
+        align-self: center;
+        cursor: pointer;
+      }
+    }
+
+    .sidebar-search {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-top: 60px;
+      padding-right: 59px;
+      box-sizing: border-box;
+
+      form {
+        width: 100%;
+
+        input {
+          width: 100%;
+          padding: 10px 50px 10px 9px;
+          border: none;
+          border-radius: 20px;
+          background: $dark;
+          color: $white;
+          text-align: right;
+          font-family: "vazir";
+          font-size: 15px;
+          outline: none;
+          @include insideShadow();
+        }
+
+        .sidebar-btnSearch {
+          position: absolute;
+          text-decoration: none;
+          top: 13px;
+          right: 18px;
+          color: $white;
+          cursor: pointer;
+
+          button{
+            outline: none;
+            background: $dark;
+            color: $white;
+            font-size: 15px;
+            border: none;
+            padding-right: 0;
+            cursor: pointer;
+          }
+        }
+
+        .sidebar-btnMicro {
+          position: absolute;
+          top: 13px;
+          left: 18px;
+          color: $white;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .sidebar-mainList {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: right;
+      align-items: center;
+      margin: 40px 0 0 auto;
+      padding: 0;
+      list-style: none;
+
+      > li {
+        &:nth-child(2){
+          &::before{
+            content: none;
+          }
+          &::after{
+            content: none;
+          }
+        }
+      }
+
+      li {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: left;
+
+        .downSideBar {
+          transform: translateY(4px);
+          transition: 0.7s;
+        }
+
+        &:hover .downSideBar {
+          transform: rotate(180deg) translateY(-4px);
+        }
+
+        a {
+          position: relative;
+          display: inline-block;
+          text-decoration: none;
+          color: $white;
+          padding: 20px;
+          font-size: 16px;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0px;
+          height: 3px;
+          left: 0;
+          top: 100%;
+          background: $green;
+          transition: 0.5s;
+          // mix-blend-mode: multiply;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0px;
+          height: 3px;
+          right: 0;
+          top: 100%;
+          background: $purple;
+          transition: 0.5s;
+          // mix-blend-mode: multiply;
+        }
+
+        &:hover::before {
+          width: 50%;
+          transform: translateX(100%);
+        }
+
+        &:hover::after {
+          width: 50%;
+          transform: translateX(-100%);
+        }
+
+        &:nth-child(3):hover::before,
+        &:nth-child(3):hover::after {
+          width: 0px;
+          transform: translateX(0px);
+        }
+      }
+
+      .sidebar-dropdown {
+        width: 170px;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        //   top: 20px;
+        right: 10px;
+        transform: translateY(20px);
+        will-change: transform;
+        transition: all 0.5s;
+        // overflow: hidden;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+
+        &::before{
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: -6px;
+          width: 11px;
+          height: 11px;
+          transform: rotate(135deg);
+          background: $dark;
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        li {
+          justify-content: center;
+        }
+
+        a {
+          padding: 10px 20px;
+          color: $white;
+          font-size: 14px;
+        }
+      }
+
+      .show .sidebar-dropdown {
+        visibility: visible;
+      }
+
+      .active .sidebar-dropdown {
+        opacity: 1;
+      }
+
+      .activeLink {
+        color: $green;
+      }
+    }
+
+    .sidebar-navBox {
+      position: absolute;
+      top: 185px;
+      left: 40px;
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      background: #444;
+      box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+        0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s, opacity 0.1s, translate 0.2s;
+      transform-origin: 50% 0%;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      z-index: 10;
+
+      .arrow {
+        position: absolute;
+        left: -2%;
+        top: 17%;
+        display: block;
+        width: 15px;
+        height: 15px;
+        transform: translate(10%, -3px) rotate(45deg);
+        background: #444;
+        z-index: 100;
+      }
+    }
+
+    .sidebar-navBox.open {
+      opacity: 1;
+    }
+  }
+}

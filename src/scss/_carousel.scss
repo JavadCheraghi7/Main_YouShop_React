@@ -1,0 +1,50 @@
+.carousel {
+  padding-top: 40px;
+
+  .swiper-container {
+    padding: 45px 0 15px 0 !important;
+
+    .swiper-slide {
+      display: flex !important;
+      justify-content: center !important;
+    }
+  }
+
+  .swiper-pagination {
+    display: none;
+  }
+
+  .swiper-button-next {
+    background: $dark !important;
+    @include normalShadow();
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transition: background 0.8s;
+    outline: none;
+    right: 20px;
+
+    &::after {
+      font-size: 25px !important;
+      font-weight: 700 !important;
+      text-align: center;
+      color: $white;
+    }
+  }
+  .swiper-button-prev {
+    background: $dark !important;
+    @include normalShadow();
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transition: background 0.8s;
+    left: 20px;
+
+    &::after {
+      font-size: 25px !important;
+      font-weight: 700 !important;
+      text-align: center;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,232 @@
+.footer {
+  background: transparent;
+  text-align: right;
+  position: relative;
+  border-top: 0.01px solid rgba(200, 200, 200, 0.1);
+
+  .footerSvg1 {
+    position: absolute;
+    width: 300px;
+    top: 20px;
+    left: 17%;
+    z-index: -1;
+    opacity: 0.1;
+    animation: footerAni1 11s linear infinite forwards;
+  }
+
+  .footerSvg2 {
+    position: absolute;
+    width: 300px;
+    top: 20px;
+    left: 17%;
+    transform: rotate(180deg);
+    z-index: -1;
+    opacity: 0.08;
+    animation: footerAni2 11s linear infinite forwards;
+  }
+  .footerSvg3 {
+    position: absolute;
+    width: 300px;
+    top: 50px;
+    right: 10%;
+    transform: rotate(180deg);
+    z-index: -1;
+    opacity: 0.15;
+    animation: footerAni1 11s linear infinite forwards;
+  }
+  .footerSvg4 {
+    position: absolute;
+    width: 300px;
+    top: 50px;
+    right: 10%;
+    transform: rotate(180deg);
+    z-index: -1;
+    opacity: 0.1;
+    animation: footerAni2 11s linear infinite forwards;
+  }
+  .footerSvg5 {
+    position: absolute;
+    width: 150px;
+    top: 200px;
+    left: 40%;
+    transform: rotate(180deg);
+    z-index: -1;
+    opacity: 0.1;
+    animation: footerAni1 11s linear infinite forwards;
+  }
+  .footerSvg6 {
+    position: absolute;
+    width: 150px;
+    top: 200px;
+    left: 40%;
+    transform: rotate(180deg);
+    z-index: -1;
+    opacity: 0.08;
+    animation: footerAni2 11s linear infinite forwards;
+  }
+
+  @keyframes footerAni1 {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes footerAni2 {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .row {
+    padding: 0 40px 40px 40px !important;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    h4 {
+      margin-top: 35px;
+      font-weight: 500;
+      color: $white;
+    }
+
+    .news {
+      flex: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+
+      .form {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 60px;
+        border-radius: 6px;
+
+        .btn {
+          background: $green;
+          border: none;
+          border-radius: 6px 0 0 6px;
+          color: $dark;
+          padding: 8px 25px;
+          font-family: "vazir";
+        }
+
+        input {
+          width: 200px;
+          padding: 0 10px;
+          border: none;
+          border-radius: 0 6px 6px 0;
+          outline: none;
+        }
+      }
+
+      .social-wrapper {
+        margin-top: 25px;
+
+        .social {
+          a {
+            display: inline-block;
+            position: relative;
+            font-size: 26px;
+            width: 40px;
+            height: 40px;
+            padding: 5px 2px 0 2px;
+            margin-left: 30px;
+            border-radius: 50%;
+            @include normalShadow();
+            text-align: center;
+            overflow: hidden;
+            color: $green;
+            z-index: 1;
+            line-height: 1.9;
+          }
+        }
+      }
+    }
+
+    .infoStore {
+      flex: 4;
+      min-width: 300px;
+      justify-content: center;
+      margin: 10px;
+
+      .text {
+        font-size: 16px;
+        text-align: justify;
+        direction: rtl;
+        padding-top: 30px;
+        line-height: 1.8;
+      }
+    }
+
+    .contactUs {
+      flex: 4;
+      margin: 10px;
+      min-width: 300px;
+
+      li {
+        padding-top: 35px;
+        font-size: 17px;
+        list-style: none;
+
+        .listIcon{
+          transform: translateY(4px);
+        }
+      }
+    }
+  }
+
+  .law {
+    padding: 10px 0;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(to right, $dark 20%, $purple 60%, $dark 75%);
+      opacity: 0.3;
+    }
+
+    .siteLaw {
+      text-align: center;
+      margin: 0;
+      z-index: 10000;
+    }
+  }
+}
+
+@media screen and(max-width: 992px) {
+  .footerSvg5,
+  .footerSvg6 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .footerSvg1,
+  .footerSvg2,
+  .footerSvg3,
+  .footerSvg4,
+  .footerSvg5,
+  .footerSvg6 {
+    display: none !important;
+  }
+
+  .row .news {
+    align-items: flex-end !important;
+  }
+
+  .law::before {
+    background: linear-gradient(to right, $dark 3%, $purple 60%, $dark 97%) !important;
+    opacity: 0.3;
+  }
+}

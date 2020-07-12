@@ -1,0 +1,311 @@
+nav {
+  position: relative;
+  display: flex;
+  border-bottom: 0.5px solid rgba(68, 68, 68, 0.9);
+
+
+  .navigate {
+    width: 100%;
+    display: flex;
+    padding: 0px 40px;
+    text-align: center;
+
+    .logo {
+      width: 55px;
+      display: flex;
+      flex-direction: column;
+      margin: 5px 0 0 0;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      overflow: hidden;
+      
+      img{
+        width: 100%;
+        height: 48px;
+        object-fit: contain;
+      }
+      
+      p{
+        margin: 0;
+        font-size: 13px;
+        font-weight: 600;
+        color: #ccc;
+        text-shadow: 1px 1px 2px black;        
+      }
+    }
+
+    .cart {
+      color: $white;
+      align-self: center;
+      padding: 8px 20px;
+      margin-left: auto;
+      border-radius: 22px;
+      @include normalShadow();
+
+      &:hover {
+        @include insideShadow();
+      }
+
+      .shoppingCart{
+        font-size: 18px;
+        transform: translateY(3px);
+      }
+
+      .buy {
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        margin-left: 2px;
+        color: $dark;
+        border-radius: 50%;
+        background: $green;
+        line-height: 1.7;
+      }
+    }
+
+    .search {
+      width: 35%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-left: auto;
+      padding-right: 57px;
+      box-sizing: border-box;
+      // transform: translateX(100px);
+
+      form{
+        width: 100%;
+
+        input {
+          width: 100%;
+          padding: 10px 50px 10px 9px;
+          border: none;
+          border-radius: 20px;
+          background: $dark;
+          color: $white;
+          text-align: right;
+          font-family: "vazir";
+          font-size: 15px;
+          outline: none;
+          @include insideShadow();
+        }
+  
+        .btnSearch {
+          position: absolute;
+          text-decoration: none;
+          top: 34px;
+          right: 10px;
+          cursor: pointer;
+          
+          button{
+            outline: none;
+            background: $dark;
+            color: $white;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+          }
+        }
+  
+        .btnMicro {
+          position: absolute;
+          top: 34px;
+          left: 18px;
+          color: $white;
+          cursor: pointer;
+        }
+      }
+
+     
+    }
+
+    .mainList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0 0 auto;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        .arrowDown {
+          transform: translateY(6px);
+          transition: 0.7s;
+        }
+
+        a {
+          position: relative;
+          display: inline-block;
+          text-decoration: none;
+          color: $white;
+          padding: 30px 20px;
+          font-size: 16px;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0px;
+          height: 3px;
+          left: 0;
+          top: 100%;
+          background: $green;
+          transition: 0.5s;
+          // mix-blend-mode: multiply;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0px;
+          height: 3px;
+          right: 0;
+          top: 100%;
+          background: $purple;
+          transition: 0.5s;
+          // mix-blend-mode: multiply;
+        }
+
+        &:hover .arrowDown{
+          transform: rotate(180deg) translateY(-4px);          
+        }
+
+        &:hover::before {
+          width: 50%;
+          transform: translateX(100%);
+        }
+
+        &:hover::after {
+          width: 50%;
+          transform: translateX(-100%);
+        }
+
+        &:nth-child(3):hover::before,
+        &:nth-child(3):hover::after {
+          width: 0px;
+          transform: translateX(0px);
+        }
+      }
+
+      .containerDropdown {
+        width: 530px;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: -20px;
+        right: 0px;
+        transform: translateY(105px);
+        will-change: transform;
+        transition: all 0.5s;
+        overflow: hidden;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+
+        a {
+          padding: 10px 20px;
+          color: $white;
+          font-size: 14px;
+        }
+
+        img{
+          width: 300px;
+          height: 200px;
+          object-fit: contain;
+        }
+
+        ul{
+          width: 200px;
+        }
+      }
+
+      .show .containerDropdown {
+        visibility: visible;
+      }
+
+      .active .containerDropdown {
+        opacity: 1;
+      }
+
+      .activeLink {
+        color: $green;
+      }
+    }
+
+    .bars{
+      display: none;
+      margin: 8px 0 8px auto;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .navBox {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      background: #444;
+      box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+        0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s, opacity 0.1s, translate 0.2s;
+      transform-origin: 50% 0%;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 999;
+
+      .arrow {
+        position: absolute;
+        right: 10%;
+        display: block;
+        width: 15px;
+        height: 15px;
+        transform: translate(10%, -3px) rotate(45deg);
+        background: #444;
+        z-index: 100;
+      }
+    }
+
+    .navBox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mainList,
+  .search,
+  .cart {
+    display: none!important;
+  }
+
+  .bars{
+    display: block!important;
+  }
+
+  .navigate{
+    padding: 0px 20px!important;
+  }
+
+  .logo{
+    img{
+      height: 30px !important;
+    }
+
+    p{
+      font-size: 11px !important;
+    }
+  }
+}

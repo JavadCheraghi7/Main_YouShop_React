@@ -1,0 +1,60 @@
+@import "./config";
+@import "./navbar";
+@import "./slider";
+@import "./sidebar";
+@import "./wave";
+@import "./headTitle";
+@import "./gooey";
+@import "./product";
+@import "./carousel";
+@import "./title";
+@import "./firstBanner";
+@import "./brandCarousel";
+@import "./scrollUp";
+@import "./footer";
+@import "./services";
+@import "./productDetail";
+@import "./compare";
+@import "./cart";
+@import "./emptyCart";
+@import "./cartTitle";
+@import "./digitalProducts";
+@import "./default";
+@import "./userAccount";
+@import "./beautifyHygen";
+@import "./search";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $dark;
+  font-family: "vazir";
+  color: $white;
+  
+  #secondBody{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@font-face {
+  font-family: "vazir";
+  src: url("../Fonts/vazirFont/Vazir.woff") format("woff"),
+    url("../Fonts/vazirFont/Vazir.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+
+// @font-face {
+//   font-family: "rammetto";
+//   src: url("../Fonts/RammettoOne/RammettoOne-Regular.woff") format("woff"),
+//     url("../Fonts/RammettoOne/RammettoOne-Regular.woff2") format("woff2");
+//   font-style: normal;
+//   font-weight: normal;
+// }

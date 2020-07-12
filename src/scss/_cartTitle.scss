@@ -1,0 +1,42 @@
+.cartTitle{
+    display: flex;
+    margin-top: 50px !important;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: $green;
+
+    .products{
+        width: 220px !important;
+    }
+
+    .name{
+        width: 248px;
+    }
+
+    .price{
+        width: 120px;
+    }
+
+    .count{
+        width: 125px;
+    }
+
+    .color{
+        width: 40px;
+    }
+
+    .remove{
+        width: 40px;
+    }
+
+    .total{
+        width: 100px;
+    }
+}
+
+@media screen and(max-width: 1250px) {
+    .cartTitle{
+        display: none;
+    }
+}

@@ -1,0 +1,146 @@
+.accountWrapper {
+  height: calc(100vh - 86.4px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logup,
+  .login {
+    position: absolute;
+    background: $dark;
+    width: 330px;
+    height: 550px;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+    @include normalShadow();
+
+    h3{
+        color: $white;
+        font-size: 17px;
+        margin-top: 20px;
+        font-weight: 500;
+    }
+
+    .firstCurve {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .secondCurve {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      pointer-events: none;
+    }
+  }
+
+  .logup {
+    transform: translateX(335px) rotateY(90deg);
+    transform-origin: left;
+    form {
+      margin-top: 60px;
+      input {
+        display: block;
+        width: 250px;
+        padding: 13px 15px;
+        font-family: "vazir";
+        border: none;
+        color: $white;
+        background: $dark;
+        border-radius: 20px;
+        margin: 25px auto 5px auto;
+        text-align: right;
+        outline: none;
+        @include insideShadow();
+      }
+
+      .msg{
+        margin: 0 30px;
+        font-size: 12px;
+        text-align: right;
+        color: rgb(250, 94, 94);
+      }
+
+      button {
+        padding: 7px 50px;
+        border: none;
+        border-radius: 7px;
+        margin-top: 25px;
+        font-family: "vazir";
+        background: $purple;
+        color: White;
+        outline: none;
+        cursor: pointer;
+        @include shadow();
+      }
+    }
+
+    p {
+      font-size: 13px;
+      margin-top: 20px;
+      direction: rtl;
+
+      .goLogin {
+        color: $green;
+        cursor: pointer !important;
+      }
+    }
+  }
+
+  .login {
+    transform: translateX(0px) rotateY(0deg);
+    transform-origin: right;
+    form {
+      margin-top: 60px;
+      input {
+        display: block;
+        width: 250px;
+        padding: 13px 15px;
+        font-family: "vazir";
+        border: none;
+        color: $white;
+        background: $dark;
+        border-radius: 20px;
+        margin: 25px auto 5px auto;
+        text-align: right;
+        outline: none;
+        @include insideShadow();
+      }
+
+      button {
+        padding: 7px 50px;
+        border: none;
+        border-radius: 7px;
+        margin-top: 25px;
+        font-family: "vazir";
+        background: $purple;
+        color: White;
+        outline: none;
+        cursor: pointer;
+        @include shadow();
+      }
+    }
+
+    p {
+      font-size: 13px;
+      margin-top: 20px;
+      direction: rtl;
+
+      .goLogup {
+        color: $green;
+        cursor: pointer !important;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 360px){
+  .accountWrapper{
+    padding: 30px 0;
+  }
+}

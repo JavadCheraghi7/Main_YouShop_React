@@ -1,0 +1,80 @@
+.firstBanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  .left,
+  .right {
+    position: relative;
+    width: 735px;
+    height: 252px;
+    margin: 15px 15px 0 15px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .firstBanner {
+    .left,
+    .right {
+      width: 670px;
+      height: 229px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .firstBanner {
+    .left,
+    .right {
+      width: 670px;
+      height: 229px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .firstBanner {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .firstBanner {
+      .left,
+      .right {
+        width: 500px;
+        height: 171px;
+      }
+    }
+  }
+
+@media screen and (max-width: 576px) {
+    .firstBanner {
+      .left,
+      .right {
+        width: 455px;
+        height: 156px;
+      }
+    }
+  }
+
+@media screen and (max-width: 475px) {
+    .firstBanner {
+      .left,
+      .right {
+        width: 340px;
+        height: 116px;
+      }
+    }
+  }
+
