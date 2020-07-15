@@ -140,7 +140,7 @@
     .removeAll{
       border: none;
       border-radius: 7px;
-      padding: 7px 30px;
+      padding: 7px 25px;
       color: $white;
       font-family: "vazir";
       background: #ff4b4b;
@@ -152,7 +152,7 @@
     .continueShop{
       border: none;
       border-radius: 7px;
-      padding: 7px 30px;
+      padding: 7px 25px;
       color: $white;
       font-family: "vazir";
       background: $purple;
@@ -178,8 +178,35 @@
   }
 }
 
+@media screen and(max-width: 500px) {
+  .cartWrapper .title .line{
+    width: 200px;
+  }
+
+  .calculationBox{
+    width: 350px !important;
+  }
+  
+}
 @media screen and(max-width: 400px) {
   .cartWrapper .title .line{
     width: 200px;
+  }
+
+  .calculationBox{
+    width: 250px !important;
+    padding: 30px 25px !important;
+
+    p{
+      font-size: 15px;
+    }
+
+    .removeAll{
+      padding: 7px 15px !important;
+    }
+
+    .continueShop{
+      padding: 7px 20px !important;
+    }
   }
 }

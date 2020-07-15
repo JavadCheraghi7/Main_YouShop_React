@@ -3145,6 +3145,7 @@ nav-control:hover {
   border: none;
   border-radius: 40px;
   color: #eef2f3;
+  background: #592bff;
   cursor: pointer;
   outline: none;
   overflow: hidden;
@@ -3623,7 +3624,7 @@ nav-control:hover {
 .calculationBox .btns .removeAll {
   border: none;
   border-radius: 7px;
-  padding: 7px 30px;
+  padding: 7px 25px;
   color: #eef2f3;
   font-family: "vazir";
   background: #ff4b4b;
@@ -3636,7 +3637,7 @@ nav-control:hover {
 .calculationBox .btns .continueShop {
   border: none;
   border-radius: 7px;
-  padding: 7px 30px;
+  padding: 7px 25px;
   color: #eef2f3;
   font-family: "vazir";
   background: #592bff;
@@ -3664,9 +3665,31 @@ nav-control:hover {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .cartWrapper .title .line {
+    width: 200px;
+  }
+  .calculationBox {
+    width: 350px !important;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .cartWrapper .title .line {
     width: 200px;
+  }
+  .calculationBox {
+    width: 250px !important;
+    padding: 30px 25px !important;
+  }
+  .calculationBox p {
+    font-size: 15px;
+  }
+  .calculationBox .removeAll {
+    padding: 7px 15px !important;
+  }
+  .calculationBox .continueShop {
+    padding: 7px 20px !important;
   }
 }
 

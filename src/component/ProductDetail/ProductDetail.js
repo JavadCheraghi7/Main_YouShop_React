@@ -11,6 +11,7 @@ import {
   getProducts,
   addToCart,
   totalCart,
+  increment
 } from "../../actions/productAction";
 import Loading from "../layout/Loading";
 import DetailSvg from "../../Pic/detailOtherPic/detailSvg.svg";
@@ -20,7 +21,7 @@ const ProductDetail = (props) => {
   const { id } = useParams();
   console.log(props.match);
   const productDetail = useSelector((state) => state.products);
-  const { detail, loading } = productDetail;
+  const { detail, loading, cart } = productDetail;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -110,9 +111,17 @@ const ProductDetail = (props) => {
   };
 
   // Add to cart
-  const handleToCart = (id) => {
-    dispatch(addToCart(id));
-    dispatch(totalCart());
+  const handleToCart = (product) => {
+    const existProduct = cart.find(item => item.id === product.id);
+    if(existProduct){
+      dispatch(increment(product.id));
+      dispatch(totalCart());
+    }
+    else{
+      dispatch(addToCart(product.id));
+      dispatch(totalCart());
+    }
+
   };
 
   // product Information
@@ -237,15 +246,7 @@ const ProductDetail = (props) => {
             <button
               type="button"
               className="shopBtn"
-              onClick={() => handleToCart(detail.id)}
-              disabled={detail.inCart ? true : false}
-              style={{
-                background: `${
-                  detail.inCart
-                    ? "rgba(101, 58, 255, 0.3)"
-                    : "rgb(101, 58, 255)"
-                } `,
-              }}
+              onClick={() => handleToCart(detail)}              
             >
               <span>افزودن به سبد خرید</span>
             </button>
