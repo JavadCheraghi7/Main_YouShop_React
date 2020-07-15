@@ -11,6 +11,10 @@ import {
   getProducts,
   addToCart,
   totalCart,
+<<<<<<< HEAD
+=======
+  productSearch,
+>>>>>>> 5ca4e394c9dc4d45fd7f659fbaa22e05296e87d6
   increment
 } from "../../actions/productAction";
 import Loading from "../layout/Loading";
@@ -112,7 +116,11 @@ const ProductDetail = (props) => {
 
   // Add to cart
   const handleToCart = (product) => {
+<<<<<<< HEAD
     const existProduct = cart.find(item => item.id === product.id);
+=======
+    const existProduct = [...cart].find(item => item.id === product.id);
+>>>>>>> 5ca4e394c9dc4d45fd7f659fbaa22e05296e87d6
     if(existProduct){
       dispatch(increment(product.id));
       dispatch(totalCart());
@@ -121,7 +129,10 @@ const ProductDetail = (props) => {
       dispatch(addToCart(product.id));
       dispatch(totalCart());
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5ca4e394c9dc4d45fd7f659fbaa22e05296e87d6
   };
 
   // product Information
@@ -246,7 +257,11 @@ const ProductDetail = (props) => {
             <button
               type="button"
               className="shopBtn"
+<<<<<<< HEAD
               onClick={() => handleToCart(detail)}              
+=======
+              onClick={() => handleToCart(detail)}
+>>>>>>> 5ca4e394c9dc4d45fd7f659fbaa22e05296e87d6
             >
               <span>افزودن به سبد خرید</span>
             </button>

@@ -133,7 +133,7 @@ export default (state = initialState, action) => {
 
       return {
         ...state,
-        cart: Array.from(new Set([...state.cart, product])),
+        cart: [...state.cart, product],
         products: temProducts,
         detail: product,
         loading: false,
