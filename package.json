@@ -28,10 +28,10 @@
     "yup": "^0.29.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "json-server": "json-server --watch db.json --port 5000",
     "dev": "concurrently \"npm start\" \"npm run json-server\"",
-    "build": "react-scripts build",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
