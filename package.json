@@ -1,4 +1,5 @@
 {
+  "homepage": "http://JavadCheraghi7.github.io/Main_YouShop_React",
   "name": "store-website",
   "version": "0.1.0",
   "private": true,
@@ -31,6 +32,7 @@
     "start": "react-scripts --openssl-legacy-provider start",
     "json-server": "json-server --watch db.json --port 5000",
     "dev": "concurrently \"npm start\" \"npm run json-server\"",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
