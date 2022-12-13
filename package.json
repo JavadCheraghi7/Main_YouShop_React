@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "json-server": "json-server --watch src/db.json --port 5000",
+    "json-server": "json-server --watch db.json --port 5000",
     "dev": "concurrently \"npm start\" \"npm run json-server\"",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
