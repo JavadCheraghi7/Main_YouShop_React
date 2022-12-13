@@ -32,6 +32,7 @@
     "start": "react-scripts --openssl-legacy-provider start",
     "json-server": "json-server --watch db.json --port 5000",
     "dev": "concurrently \"npm start\" \"npm run json-server\"",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
@@ -54,6 +55,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
+    "gh-pages": "^4.0.0",
     "json-server": "^0.16.1"
   },
   "proxy": "http://localhost:5000"
