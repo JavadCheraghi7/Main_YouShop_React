@@ -27,7 +27,7 @@ import axios from "axios";
 export const getProducts = () => async (dispatch) => {
   try {
     setLoading();
-    const { data } = await axios.get("http://localhost:5000/products");
+    const { data } = await axios.get("http://localhost:5000/products", { maxContentLength: Infinity });
     dispatch({ type: GET_PRODUCT, payload: data });
   } catch (err) {
     dispatch({ type: PRODUCT_ERROR, payload: err.response.statusText });
@@ -122,7 +122,7 @@ export const removeAllProduct = () => dispatch =>{
 export const productSearch = (text) => async (dispatch) =>{
   try{
     setLoading();
-    const {data} = await axios.get(`http://localhost:5000/products?q=${text}`)
+    const {data} = await axios.get(`http://localhost:5000/products?q=${text}`,{ maxContentLength: Infinity })
     dispatch({type: SEARCH_PRODUCT, payload: data});
   }
   catch(err){

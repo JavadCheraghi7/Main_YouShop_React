@@ -4,7 +4,7 @@ import axios from "axios";
 export const getUsers = () => async (dispatch) =>{
     try{
         setLoading();
-        const {data} = await axios.get("http://localhost:5000/users");
+        const {data} = await axios.get("http://localhost:5000/users", { maxContentLength: Infinity });
         dispatch({type: GET_USERS, payload: data});
     }
     catch(err){
