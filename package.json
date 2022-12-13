@@ -1,5 +1,4 @@
 {
-  "homepage": "http://JavadCheraghi7.github.io/Main_YouShop_React",
   "name": "store-website",
   "version": "0.1.0",
   "private": true,
@@ -9,7 +8,6 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "formik": "^2.1.4",
-    "framer-motion": "^1.10.3",
     "install": "^0.13.0",
     "npm": "^6.14.5",
     "react": "^16.13.1",
@@ -32,8 +30,6 @@
     "start": "react-scripts --openssl-legacy-provider start",
     "json-server": "json-server --watch db.json --port 5000",
     "dev": "concurrently \"npm start\" \"npm run json-server\"",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -55,7 +51,6 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
-    "gh-pages": "^4.0.0",
     "json-server": "^0.16.1"
   },
   "proxy": "http://localhost:5000"
