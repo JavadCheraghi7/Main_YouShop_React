@@ -27,7 +27,7 @@ import axios from "axios";
 export const getProducts = () => async (dispatch) => {
   try {
     setLoading();
-    const { data } = await axios.get("http://localhost:5000/products", { maxContentLength: Infinity });
+    const { data } = await axios.get("https://db-youshop-vercel.vercel.app/products", { maxContentLength: Infinity });
     dispatch({ type: GET_PRODUCT, payload: data });
   } catch (err) {
     dispatch({ type: PRODUCT_ERROR, payload: err.response.statusText });
@@ -39,7 +39,7 @@ export const handleDetail = (id) => async (dispatch) => {
   try {
     setLoading();
     const { data } = await axios.get(
-      `http://localhost:5000/products/${id}`
+      `https://db-youshop-vercel.vercel.app/products/${id}`
     );
     dispatch({ type: DETAIL_SUCCESS, payload: data });
   } catch (err) {
@@ -52,7 +52,7 @@ export const handleDetail = (id) => async (dispatch) => {
 export const handleCompare = (id) => async (dispatch) => {
   try {
     setLoading();
-    const { data } = await axios.get(`http://localhost:5000/products/${id}`);
+    const { data } = await axios.get(`https://db-youshop-vercel.vercel.app/products/${id}`);
     dispatch({ type: SET_COMPARE, payload: data });
   } catch (err) {
     console.log(err);
@@ -122,7 +122,7 @@ export const removeAllProduct = () => dispatch =>{
 export const productSearch = (text) => async (dispatch) =>{
   try{
     setLoading();
-    const {data} = await axios.get(`http://localhost:5000/products?q=${text}`,{ maxContentLength: Infinity })
+    const {data} = await axios.get(`https://db-youshop-vercel.vercel.app/products?q=${text}`,{ maxContentLength: Infinity })
     dispatch({type: SEARCH_PRODUCT, payload: data});
   }
   catch(err){
@@ -141,7 +141,7 @@ export const Like = (setLike) => async (dispatch) => {
   try {
     setLoading();
     const { data } = await axios.put(
-      `http://localhost:5000/products/${setLike.id}`,
+      `https://db-youshop-vercel.vercel.app/products/${setLike.id}`,
       setLike,
       config
     );

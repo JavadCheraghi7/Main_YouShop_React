@@ -131,6 +131,8 @@ const ProductDetail = (props) => {
   const inx = entries.indexOf(total);
   const arr = entries.slice(inx + 1);
 
+  
+
   return (
     <div className="detailContainer">
       <div className="overlay first"></div>
@@ -169,7 +171,7 @@ const ProductDetail = (props) => {
                 </span>
               )}
             </li>
-            {arr.map((item, index) => {
+            {arr && arr.map((item, index) => {
               return (
                 <li key={index}>
                   <FaAngleLeft className="arrowLeftDetail" /> {item[0]} :{" "}
