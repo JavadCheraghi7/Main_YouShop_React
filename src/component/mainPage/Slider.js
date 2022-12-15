@@ -106,11 +106,11 @@ const Slider = (props) => {
                 <img src={part.img} alt="pic" />
               </span>
               <span className="title__element">
-                <span className={`title ${animation}`}>{part.twoTitle}</span>
+                <span className={`title ${animation}`}>{part.secondTitle}</span>
               </span>
               <span className="more__element">
                 <span className="content">
-                  <span className="headline">{part.twoTitle}</span>
+                  <span className="headline">{part.secondTitle}</span>
                   <span className="excerpt">
                     برای خرید این محصول وارد لینک زیر شوید
                   </span>
